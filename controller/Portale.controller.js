@@ -25,6 +25,7 @@ sap.ui.define(
               title: "Proof Of delivery",
               info: "    Consegne in attesa   ",
               infoState: "Error",
+              //link: "https://45v9s.sse.codesandbox.io/"
               link: "https://pod.awskeytech.com"
             }
             /*,
@@ -197,24 +198,10 @@ sap.ui.define(
         var sPath = evt.getSource().getBindingContext().getPath();
         var oContext = oModel.getProperty(sPath);
 
-        var form = document.createElement("form");
-        form.setAttribute("method", "post");
-        form.setAttribute("action", "openData.do");
-
-        form.setAttribute("target", "view");
-
-        var hiddenField = document.createElement("input");
-        hiddenField.setAttribute("type", "hidden");
-        hiddenField.setAttribute("name", "LogPortale");
-        hiddenField.setAttribute("value", "XXX");
-        form.appendChild(hiddenField);
-        document.body.appendChild(form);
-
-        window.open(oContext.link, "view");
-
-        form.submit();
-
-        //window.open(oContext.link, "_self");
+        var d = new Date();
+        var passhash = CryptoJS.MD5(d.getHours() + d.getMinutes()).toString();
+        var link = oContext.link + "?US=" + usr + "&TK=" + passhash;
+        window.open(link, "_self");
       }
     });
   }

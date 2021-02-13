@@ -1,42 +1,72 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>AWS Portal</title>
-    <meta name="description" content="Login Proof Of Delivery">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login Proof Of Delivery" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="portale.ico" type="image/x-icon" />
-	<link rel="shortcut icon" href="portale.ico" type="image/x-icon" />
-	<script id="sap-ui-bootstrap"
-		src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
-		data-sap-ui-theme="sap_belize"
-		data-sap-ui-libs="sap.m, sap.ui.layout, sap.tnt"
-		data-sap-ui-resourceroots='{"Quickstart": "./"}'
-		data-sap-ui-async="true">
-	</script>
-	<link rel="stylesheet" href="css/style.css">
-	<script type="text/javascript" src="lib/axios/dist/axios.standalone.js"></script>
-    <script type="text/javascript" src="lib/CryptoJS/rollups/hmac-sha256.js"></script>
-    <script type="text/javascript" src="lib/CryptoJS/rollups/sha256.js"></script>
-    <script type="text/javascript" src="lib/CryptoJS/components/hmac.js"></script>
-    <script type="text/javascript" src="lib/CryptoJS/components/enc-base64.js"></script>
-    <script type="text/javascript" src="lib/url-template/url-template.js"></script>
-    <script type="text/javascript" src="lib/apiGatewayCore/sigV4Client.js"></script>
-    <script type="text/javascript" src="lib/apiGatewayCore/apiGatewayClient.js"></script>
-    <script type="text/javascript" src="lib/apiGatewayCore/simpleHttpClient.js"></script>
+    <link rel="shortcut icon" href="portale.ico" type="image/x-icon" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/core.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
+    <script
+      id="sap-ui-bootstrap"
+      src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_belize"
+      data-sap-ui-libs="sap.m, sap.ui.layout, sap.tnt"
+      data-sap-ui-resourceroots='{"Quickstart": "./"}'
+      data-sap-ui-async="true"
+    ></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      type="text/javascript"
+      src="lib/axios/dist/axios.standalone.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="lib/CryptoJS/rollups/hmac-sha256.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="lib/CryptoJS/rollups/sha256.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="lib/CryptoJS/components/hmac.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="lib/CryptoJS/components/enc-base64.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="lib/url-template/url-template.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="lib/apiGatewayCore/sigV4Client.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="lib/apiGatewayCore/apiGatewayClient.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="lib/apiGatewayCore/simpleHttpClient.js"
+    ></script>
     <script type="text/javascript" src="lib/apiGatewayCore/utils.js"></script>
     <script type="text/javascript" src="apigClient.js"></script>
-	<script>
-		sap.ui.getCore().attachInit(function () {
-			sap.ui.require([
-				"sap/ui/core/mvc/XMLView"
-			], function (XMLView) {
-				XMLView.create({viewName: "Quickstart.view.Portale"}).then(function (oView) {
-					oView.placeAt("content");
-				});
-			});
-		});
-	</script>
-</head>
-<body class="sapUiBody" id="content"></body>
+    <script>
+      sap.ui.getCore().attachInit(function () {
+        sap.ui.require(["sap/ui/core/mvc/XMLView"], function (XMLView) {
+          XMLView.create({ viewName: "Quickstart.view.Portale" }).then(
+            function (oView) {
+              oView.placeAt("content");
+            }
+          );
+        });
+      });
+    </script>
+  </head>
+  <body class="sapUiBody" id="content"></body>
 </html>
