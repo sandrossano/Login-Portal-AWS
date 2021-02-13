@@ -1,8 +1,13 @@
-<mvc:View controllerName="Quickstart.controller.Portale" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+<mvc:View controllerName="Quickstart.controller.Portale" 	xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
 	<App id="app">
 		<Page title="AWS Portal" class="page2BgImg">
 			<headerContent>
-				<ObjectStatus text="" id="userHeader" icon="sap-icon://employee" state="Information" />
+			<core:Icon
+			src="sap-icon://employee"
+			class="sizeIconHeader"
+			color="#031E48" >
+		</core:Icon>
+				<ObjectStatus text="" id="userHeader" state="Information" />
 				<Button icon="sap-icon://log" press=".onLogout" class="sapUiSmallMarginEnd" tooltip="Disconnetti" />
 			</headerContent>
 			<VBox alignItems="Center">

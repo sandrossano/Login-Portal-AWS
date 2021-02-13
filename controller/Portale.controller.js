@@ -27,6 +27,16 @@ sap.ui.define(
               infoState: "Error",
               //link: "https://45v9s.sse.codesandbox.io/"
               link: "https://pod.awskeytech.com/pod.html"
+            },
+            {
+              icon: "sap-icon://bar-code",
+              //"type": "Monitor",
+              //number: "1",
+              title: "Barcode",
+              info: "    App Lettura Barcode   ",
+              infoState: "Warning",
+              //link: "https://45v9s.sse.codesandbox.io/"
+              link: "https://barcode.awskeytech.com/"
             }
             /*,
 					{
