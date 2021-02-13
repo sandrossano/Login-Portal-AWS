@@ -26,7 +26,7 @@ sap.ui.define(
               info: "    Consegne in attesa   ",
               infoState: "Error",
               //link: "https://45v9s.sse.codesandbox.io/"
-              link: "https://pod.awskeytech.com"
+              link: "https://pod.awskeytech.com/pod.html"
             }
             /*,
 					{
