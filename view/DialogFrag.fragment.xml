@@ -1,0 +1,59 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
+ <Dialog title="Modifica Password" id="ListDialog" afterClose="onAfterClose">
+  <l:VerticalLayout class="">
+   <HBox class="" alignItems="Center">
+    <ObjectStatus class="sapUiSmallMarginBottom" text="" id="compl" icon="sap-icon://hint" state="Information" />
+   </HBox>
+   <HBox class="" alignItems="Center">
+    <Label text="Nuova password" labelFor="owner" width="10em" />
+    <Input id="passwordInputDialog" type="Password" placeholder="Enter password" />
+    <!--<SearchField id="searchField"  width="15em" placeholder="search for..."
+     enableSuggestions="true" search="onSearch" suggest="onSuggest"
+     suggestionItems="{
+     path: '/ProductCollection',
+     sorter: { path: 'Name' }
+    }">
+     <suggestionItems>
+      <SuggestionItem text="{Name}"
+       description="{path:'Price'} {path:'CurrencyCode'}" key="{ProductId}" />
+     </suggestionItems>
+    </SearchField>-->
+   </HBox>
+
+   <HBox class="" alignItems="Center">
+    <Label text="Conferma password" labelFor="date" width="10em"/>
+    <Input id="passwordConfDialog" type="Password" placeholder="Confirm password" />
+    <!--<DatePicker id="DP2" value="28-02-2018" valueFormat="dd-mm-yyyy"
+     displayFormat="long" change="handleChange" class="" width="15em" />-->
+   </HBox>
+
+   <HBox class="" alignItems="Center">
+    <CheckBox text="Mostra Password" valueState="Information" select=".onShowPswDialog" id="checkpswdialog" />
+    <!--<Label text="Time of need" labelFor="time" width="10em" />
+    <TimePicker id="TP1" value="19:15" valueFormat="HH:mm"
+     displayFormat="HH:mm" change="handleChange" placeholder="Enter meeting start time"
+     width="15em" />-->
+   </HBox>
+   <!--
+   <HBox class="" alignItems = "Center">
+    <Label text="Delivery Priority" labelFor="priority" width="10em" />
+    <ComboBox
+     items="{
+     path: '/ProductCollection',
+     sorter: { path: 'Name' }
+    }">
+     <core:Item key="{ProductId}" text="{Name}" />
+    </ComboBox>
+   </HBox>
+ -->
+  </l:VerticalLayout>
+
+  <beginButton>
+   <Button text="Annulla" press="onClose" />
+  </beginButton>
+  <endButton>
+   <Button text="Procedi" press="onSave" />
+  </endButton>
+ </Dialog>
+
+</core:FragmentDefinition>

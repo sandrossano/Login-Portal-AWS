@@ -1,0 +1,24 @@
+<mvc:View controllerName="Quickstart.controller.Portale" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<App id="app">
+		<Page title="AWS Portal" class="page2BgImg">
+			<headerContent>
+				<ObjectStatus text="" id="userHeader" icon="sap-icon://employee" state="Information" />
+				<Button icon="sap-icon://log" press=".onLogout" class="sapUiSmallMarginEnd" tooltip="Disconnetti" />
+			</headerContent>
+			<VBox alignItems="Center">
+			<Image src="./img/Casillo_logo.png" width="260px" class="absolute"/>
+			</VBox>
+			<TileContainer id="container" tileDelete="handleTileDelete" tiles="{/TileCollection}">
+				<StandardTile press="onPressTile" icon="{icon}" type="{type}" number="{number}" numberUnit="{numberUnit}" title="{title}" info="{info}" infoState="{infoState}" />
+			</TileContainer>
+			<!--	<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+					<Button text="Edit" press="handleEditPress" />
+					<Button text="Busy state" press="handleBusyPress" />
+				<ToolbarSpacer/>
+			</Toolbar>
+		</footer> -->
+		</Page>
+	</App>
+</mvc:View>

@@ -1,0 +1,65 @@
+<mvc:View controllerName="Quickstart.controller.App" displayBlock="true" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:tnt="sap.tnt" xmlns="sap.m">
+	<App id="app">
+		<Page title="Login" class="page2BgImg">
+			<l:BlockLayout background="Light">
+				<l:BlockLayoutRow>
+					<l:BlockLayoutCell>
+						<VBox alignItems="Center">
+							<Image src="./img/Logo.jpg" width="100%"/>
+						</VBox>
+						<!--<core:Icon color="#1873B4" src="sap-icon://sap-ui5" size="5rem" class="sapUiSmallMarginBottom" width="100%"/>-->
+						<Title class="sapUiSmallMarginTop" level="H1" titleStyle="H1" text="Benvenuto nel portale!" width="100%" textAlign="Center" />
+					</l:BlockLayoutCell>
+				</l:BlockLayoutRow>
+				<l:BlockLayoutRow>
+					<l:BlockLayoutCell>
+						<FlexBox items="{/features}" justifyContent="Center" wrap="Wrap" class="sapUiSmallMarginBottom">
+							<tnt:InfoLabel text="{}" class="sapUiSmallMarginTop sapUiSmallMarginEnd" />
+						</FlexBox>
+						<l:VerticalLayout class="sapUiContentPadding" width="100%">
+							<Text text="Username" class="sapUiSmallMarginTop" />
+							<Input id="inputText" placeholder="Enter Username" class="sapUiSmallMarginBottom" />
+							<Text text="Password" />
+							<Input id="passwordInput" type="Password" placeholder="Enter password" />
+							<CheckBox text="Mostra Password" valueState="Information" select=".onShowPsw" id="checkpsw" />
+						</l:VerticalLayout>
+						<VBox alignItems="Center">
+							<Button text="Accedi" type="Emphasized" press=".onLogin" ariaDescribedBy="defaultButtonDescription genericButtonDescription">
+										<layoutData>
+									<FlexItemData growFactor="1" />
+								</layoutData>
+							</Button>
+
+							<!--	<Button text="DialogBox" type="Up" press=".onPressDia" ariaDescribedBy="defaultButtonDescription genericButtonDescription">
+								</Button> -->
+						</VBox>
+					</l:BlockLayoutCell>
+
+				</l:BlockLayoutRow>
+				<l:BlockLayoutRow>
+					<l:BlockLayoutCell>
+						<Panel headerText="Recupera Password" expandable="true">
+
+							<Switch change=".onChange" customTextOn="yes" customTextOff="no" />
+							<!--<l:HorizontalLayout id="ready" visible="false" class="sapUiSmallMargin">
+								<Text text="Ok, let's get you started!" class="sapUiTinyMarginEnd" />
+								<Link text="Learn more" href="https://openui5.hana.ondemand.com/" />
+							</l:HorizontalLayout>-->
+							<HBox></HBox>
+								<l:VerticalLayout id="ready" visible="false" class="sapUiContentPadding bloccoRec sapUiTinyMarginTop sapUiMediumMarginStart" width="100%" >
+
+									<Text text="Username" class="sapUiSmallMarginTop" />
+									<Input id="UserRecovery" placeholder="Enter Username" class="sapUiSmallMarginBottom" />
+									<Text text="Email" />
+									<Input id="EmailRecovery" type="Email" placeholder="Enter Email" />
+									<VBox alignItems="Center">
+										<Button text="Recupera Password" type="Success" press=".onRecovery" ariaDescribedBy="defaultButtonDescription genericButtonDescription" />
+									</VBox>
+								</l:VerticalLayout>
+						</Panel>
+					</l:BlockLayoutCell>
+				</l:BlockLayoutRow>
+			</l:BlockLayout>
+		</Page>
+	</App>
+</mvc:View>
