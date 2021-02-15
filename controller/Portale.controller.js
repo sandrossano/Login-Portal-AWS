@@ -35,7 +35,7 @@ sap.ui.define(
               title: "Barcode",
               info: "    App Lettura Barcode   ",
               infoState: "Warning",
-              //link: "https://45v9s.sse.codesandbox.io/"
+              //link: "https://zmfpj.sse.codesandbox.io/"
               link: "https://barcode.awskeytech.com/"
             }
             /*,
@@ -209,7 +209,9 @@ sap.ui.define(
         var oContext = oModel.getProperty(sPath);
 
         var d = new Date();
-        var passhash = CryptoJS.MD5(d.getHours() + d.getMinutes()).toString();
+        var passhash = CryptoJS.MD5(
+          d.getHours() + d.getMinutes() + ""
+        ).toString();
         var link = oContext.link + "?US=" + usr + "&TK=" + passhash;
         window.open(link, "_self");
       }
