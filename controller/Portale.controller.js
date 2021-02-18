@@ -29,10 +29,10 @@ sap.ui.define(
               link: "https://pod.awskeytech.com/pod.html"
             },
             {
-              icon: "sap-icon://bar-code",
+              icon: "sap-icon://add-photo",
               //"type": "Monitor",
               //number: "1",
-              title: "Barcode",
+              title: "Upload Foto",
               info: "    App Lettura Barcode   ",
               infoState: "Warning",
               //link: "https://zmfpj.sse.codesandbox.io/"
