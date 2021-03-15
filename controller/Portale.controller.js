@@ -33,7 +33,7 @@ sap.ui.define(
               //"type": "Monitor",
               //number: "1",
               title: "Upload Foto",
-              info: "    App Lettura Barcode   ",
+              info: "    App caricamento foto   ",
               infoState: "Warning",
               //link: "https://zmfpj.sse.codesandbox.io/"
               link: "https://barcode.awskeytech.com/"
