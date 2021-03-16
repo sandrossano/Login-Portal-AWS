@@ -11,6 +11,7 @@
   padding-right: 50px !important;
   margin-left: 5%;
   margin-right: 5%;
+  border-radius: 25px;
 }
 /*.sapUiCompFilterBar {*/
 .BoxFilter {
@@ -116,6 +117,7 @@ tbody tr:nth-child(even) {
   margin-bottom: 10px;
   margin-right: 10%;
   margin-left: 10%;
+  border-radius: 25px;
 }
 
 .sapMIBar > .sapMBarLeft > .sapMBarChild:last-child,
