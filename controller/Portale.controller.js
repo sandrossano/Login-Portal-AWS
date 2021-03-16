@@ -22,7 +22,7 @@ sap.ui.define(
               icon: "sap-icon://shipping-status",
               //"type": "Monitor",
               number: "0",
-              title: "Proof Of delivery",
+              title: "Proof Of Delivery",
               info: "    Consegne in attesa   ",
               infoState: "Error",
               //link: "https://45v9s.sse.codesandbox.io/"
@@ -148,7 +148,7 @@ sap.ui.define(
 
         var that = this;
         //usr.toUpperCase() cambiare ssII
-        var path = "?$filter=Usrid%20eq%20%27" + "SSII" + "%27";
+        var path = "?$filter=Usrid%20eq%20%27" + usr.toUpperCase() + "%27";
         var params = {
           Authorization: "Basic c3NpaTpsaW1waW8=",
           //Origin: 'https://2eux8z72w3.execute-api.eu-west-3.amazonaws.com',
