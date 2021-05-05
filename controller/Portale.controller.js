@@ -26,7 +26,7 @@ sap.ui.define(
               info: "    Consegne in attesa   ",
               infoState: "Error",
               //link: "https://45v9s.sse.codesandbox.io/"
-              link: "https://pod.awskeytech.com/pod.html"
+              link: "https://main.d3oi2r6hzb479d.amplifyapp.com/"
             },
             {
               icon: "sap-icon://add-photo",
@@ -36,7 +36,7 @@ sap.ui.define(
               info: "    App caricamento foto   ",
               infoState: "Warning",
               //link: "https://zmfpj.sse.codesandbox.io/"
-              link: "https://barcode.awskeytech.com/"
+              link: "https://main.d25q0ebx18rz1l.amplifyapp.com/"
             }
             /*,
 					{
