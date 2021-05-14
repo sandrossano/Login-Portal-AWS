@@ -45,8 +45,8 @@
 								<Text text="Ok, let's get you started!" class="sapUiTinyMarginEnd" />
 								<Link text="Learn more" href="https://openui5.hana.ondemand.com/" />
 							</l:HorizontalLayout>-->
-							<HBox></HBox>
-								<l:VerticalLayout id="ready" visible="false" class="sapUiContentPadding bloccoRec sapUiTinyMarginTop sapUiMediumMarginStart" width="100%" >
+							<VBox alignItems="Center">
+								<l:VerticalLayout id="ready" visible="false" class="bloccoRec sapUiTinyMarginTop sapUiLargeMarginEnd " width="100%" >
 
 									<Text text="Username" class="sapUiSmallMarginTop" />
 									<Input id="UserRecovery" placeholder="Enter Username" class="sapUiSmallMarginBottom" />
@@ -56,6 +56,7 @@
 										<Button text="Recupera Password" type="Success" press=".onRecovery" ariaDescribedBy="defaultButtonDescription genericButtonDescription" />
 									</VBox>
 								</l:VerticalLayout>
+						</VBox>
 						</Panel>
 					</l:BlockLayoutCell>
 				</l:BlockLayoutRow>
