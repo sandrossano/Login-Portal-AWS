@@ -20,9 +20,11 @@ sap.ui.define(
           TileCollection: [
             {
               __metadata: {
-              "id": "http://sap.casillogroup.it:1043/sap/opu/odata/sap/ZWEB_USERS_SRV/UserAppSet(Pwdob='POD',Uname='SSII',Appid='POD')",
-              "uri": "http://sap.casillogroup.it:1043/sap/opu/odata/sap/ZWEB_USERS_SRV/UserAppSet(Pwdob='POD',Uname='SSII',Appid='POD')",
-              "type": "ZWEB_USERS_SRV.UserApp"
+                id:
+                  "http://sap.casillogroup.it:1043/sap/opu/odata/sap/ZWEB_USERS_SRV/UserAppSet(Pwdob='POD',Uname='SSII',Appid='POD')",
+                uri:
+                  "http://sap.casillogroup.it:1043/sap/opu/odata/sap/ZWEB_USERS_SRV/UserAppSet(Pwdob='POD',Uname='SSII',Appid='POD')",
+                type: "ZWEB_USERS_SRV.UserApp"
               },
               Pwdob: "POD",
               Uname: "SSII",
@@ -38,9 +40,11 @@ sap.ui.define(
             },
             {
               __metadata: {
-              "id": "http://sap.casillogroup.it:1043/sap/opu/odata/sap/ZWEB_USERS_SRV/UserAppSet(Pwdob='POD',Uname='SSII',Appid='FOTO')",
-              "uri": "http://sap.casillogroup.it:1043/sap/opu/odata/sap/ZWEB_USERS_SRV/UserAppSet(Pwdob='POD',Uname='SSII',Appid='FOTO')",
-              "type": "ZWEB_USERS_SRV.UserApp"
+                id:
+                  "http://sap.casillogroup.it:1043/sap/opu/odata/sap/ZWEB_USERS_SRV/UserAppSet(Pwdob='POD',Uname='SSII',Appid='FOTO')",
+                uri:
+                  "http://sap.casillogroup.it:1043/sap/opu/odata/sap/ZWEB_USERS_SRV/UserAppSet(Pwdob='POD',Uname='SSII',Appid='FOTO')",
+                type: "ZWEB_USERS_SRV.UserApp"
               },
               Pwdob: "POD",
               Uname: "SSII",
@@ -143,13 +147,12 @@ sap.ui.define(
         });
 
         this.getView().setModel(oModel);
-        for(var i = 0;i<10;i++){
+        for (var i = 0; i < 10; i++) {
           var prop = "/TileCollection/" + i + "/Appid";
           if (oModel.getProperty(prop) === "POD") {
             this.getNumbDel(i);
-          }  
+          }
         }
-
       },
 
       onAfterRendering: function () {
@@ -188,7 +191,8 @@ sap.ui.define(
                 cont++;
               }
             }
-            oModel.setProperty("/TileCollection/"+i+"/number", cont + "");
+            var prop = "/TileCollection/" + i + "/number";
+            oModel.setProperty(prop, cont + "");
 
             sap.ui.core.BusyIndicator.hide();
           })
