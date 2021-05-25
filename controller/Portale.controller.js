@@ -20,12 +20,12 @@ sap.ui.define(
           TileCollection: [
             {
               __metadata: {
-              "id": "http://sap.casillogroup.it:1043/sap/opu/odata/sap/ZWEB_USERS_SRV/UserAppSet(Pwdob='POD',Uname='SSII',Appid='FOTO')",
-              "uri": "http://sap.casillogroup.it:1043/sap/opu/odata/sap/ZWEB_USERS_SRV/UserAppSet(Pwdob='POD',Uname='SSII',Appid='FOTO')",
+              "id": "http://sap.casillogroup.it:1043/sap/opu/odata/sap/ZWEB_USERS_SRV/UserAppSet(Pwdob='POD',Uname='SSII',Appid='POD')",
+              "uri": "http://sap.casillogroup.it:1043/sap/opu/odata/sap/ZWEB_USERS_SRV/UserAppSet(Pwdob='POD',Uname='SSII',Appid='POD')",
               "type": "ZWEB_USERS_SRV.UserApp"
               },
               Pwdob: "POD",
-              Uname: "SSII", 
+              Uname: "SSII",
               Appid: "POD",
               icon: "sap-icon://shipping-status",
               //"type": "Monitor",
@@ -37,6 +37,14 @@ sap.ui.define(
               link: "https://main.d3oi2r6hzb479d.amplifyapp.com/"
             },
             {
+              __metadata: {
+              "id": "http://sap.casillogroup.it:1043/sap/opu/odata/sap/ZWEB_USERS_SRV/UserAppSet(Pwdob='POD',Uname='SSII',Appid='FOTO')",
+              "uri": "http://sap.casillogroup.it:1043/sap/opu/odata/sap/ZWEB_USERS_SRV/UserAppSet(Pwdob='POD',Uname='SSII',Appid='FOTO')",
+              "type": "ZWEB_USERS_SRV.UserApp"
+              },
+              Pwdob: "POD",
+              Uname: "SSII",
+              Appid: "FOTO",
               icon: "sap-icon://add-photo",
               //"type": "Monitor",
               //number: "1",
