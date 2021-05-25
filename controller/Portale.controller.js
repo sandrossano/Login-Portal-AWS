@@ -143,14 +143,20 @@ sap.ui.define(
         });
 
         this.getView().setModel(oModel);
-        this.getNumbDel();
+        for(var i = 0;i<10;i++){
+          var prop = "/TileCollection/" + i + "/Appid";
+          if (oModel.getProperty(prop) === "POD") {
+            this.getNumbDel(i);
+          }  
+        }
+
       },
 
       onAfterRendering: function () {
         this.getView().byId("userHeader").setText(usr);
       },
 
-      getNumbDel: function () {
+      getNumbDel: function (i) {
         sap.ui.core.BusyIndicator.show();
         /*var logged = sessionStorage.getItem('Logged');
 			usr = sessionStorage.getItem('User');
@@ -182,7 +188,7 @@ sap.ui.define(
                 cont++;
               }
             }
-            oModel.setProperty("/TileCollection/0/number", cont + "");
+            oModel.setProperty("/TileCollection/"+i+"/number", cont + "");
 
             sap.ui.core.BusyIndicator.hide();
           })
