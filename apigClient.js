@@ -54,7 +54,7 @@ apigClientFactory.newClient = function (config) {
   // extract endpoint and path from url
 
   var invokeUrl =
-    "https://cors-casillo-sap.herokuapp.com/https://742o1qcw9l.execute-api.eu-west-3.amazonaws.com/StageDeploy";
+    "https://cors-casillo-sap.herokuapp.com/https://f390w4tlt0.execute-api.eu-west-3.amazonaws.com/StageDeploy";
   //var invokeUrl = 'http://www.whateverorigin.org/get?url='+encodeURIComponent('https://2eux8z72w3.execute-api.eu-west-3.amazonaws.com/StageDeploy');
   var endpoint = /(^https?:\/\/[^\/]+)/g.exec(invokeUrl)[1];
   var pathComponent = invokeUrl.substring(endpoint.length);

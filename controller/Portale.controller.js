@@ -168,7 +168,7 @@ sap.ui.define(
 			} */
 
         var apigClient = apigClientFactory.newClient({
-          apiKey: "9oYcmEwDgF130RD3m7mn05yH3eKeMBu3AQcFOkkg"
+          apiKey: "GA5MAvKlsV9bJYJiQtl8XwVHw8tVpXu3BuHzsNih"
         });
 
         var that = this;
