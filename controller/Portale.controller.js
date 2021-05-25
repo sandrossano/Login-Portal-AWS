@@ -159,7 +159,7 @@ sap.ui.define(
         this.getView().byId("userHeader").setText(usr);
       },
 
-      getNumbDel: function (i) {
+      getNumbDel: function (contatore) {
         sap.ui.core.BusyIndicator.show();
         /*var logged = sessionStorage.getItem('Logged');
 			usr = sessionStorage.getItem('User');
@@ -191,7 +191,7 @@ sap.ui.define(
                 cont++;
               }
             }
-            var prop = "/TileCollection/" + i + "/number";
+            var prop = "/TileCollection/" + contatore + "/number";
             oModel.setProperty(prop, cont + "");
 
             sap.ui.core.BusyIndicator.hide();
