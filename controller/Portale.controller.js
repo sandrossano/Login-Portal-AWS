@@ -181,13 +181,16 @@ sap.ui.define(
             var list = oViewModel.getProperty("/");
             that.oModel = new JSONModel(list); //.results);
             that.getView().setModel(that.oModel);
+            var loadpod = false;
             for (var i = 0; i < 30; i++) {
               var prop = "/results/" + i + "/Appid";
               if (that.oModel.getProperty(prop) === "POD") {
                 that.getNumbDel(i);
+                loadpod = true;
               }
             }
-            sap.ui.core.BusyIndicator.hide();
+            if (loadpod === false) sap.ui.core.BusyIndicator.hide();
+            else loadpod = false;
           })
           .catch(function (result) {
             // Add error callback code here.
