@@ -293,7 +293,7 @@ sap.ui.define(
       },
       onPressTile: function (evt) {
         var sPath = evt.getSource().getBindingContext().getPath();
-        var oContext = oModel.getProperty(sPath);
+        var oContext = this.oModel.getProperty(sPath);
 
         var d = new Date();
         var passhash = CryptoJS.MD5(
