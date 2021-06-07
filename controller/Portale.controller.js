@@ -16,6 +16,7 @@ sap.ui.define(
           window.open("index.html", "_self");
         }
         // set mock model
+        /*
         oModel = new JSONModel({
           TileCollection: [
             {
@@ -142,21 +143,80 @@ sap.ui.define(
 						"title": "Financial Reports",
 						"info": "4 day ago",
 						"infoState": "Warning"
-					}*/
+					}
           ]
         });
-
-        this.getView().setModel(oModel);
-        for (var i = 0; i < 10; i++) {
-          var prop = "/TileCollection/" + i + "/Appid";
-          if (oModel.getProperty(prop) === "POD") {
-            this.getNumbDel(i);
-          }
-        }
+*/
+        // this.getListApp();
+      },
+      onBeforeRendering: function () {
+        this.getListApp();
       },
 
       onAfterRendering: function () {
         this.getView().byId("userHeader").setText(usr);
+      },
+
+      getListApp: function () {
+        sap.ui.core.BusyIndicator.show();
+
+        var apigClient = apigClientFactory.newClient({
+          apiKey: "GA5MAvKlsV9bJYJiQtl8XwVHw8tVpXu3BuHzsNih"
+        });
+
+        var that = this;
+        //usr.toUpperCase() cambiare ssII
+        var path =
+          "?$filter=Uname%20eq%20%27" + usr.toUpperCase() + "%27&$format=json";
+        var params = {
+          Authorization: "Basic c3NpaTpsaW1waW8=",
+          // DEV Authorization: "Basic c3NpaTpaZXVzQDIwMjEh",
+          //Origin: 'https://2eux8z72w3.execute-api.eu-west-3.amazonaws.com',
+          path: path //'(Pwdob=\'POD\',Uname=\'SSII\',Pwd=\'DQ3PCyo37B\')',
+        };
+        apigClient
+          .ZWEBPODSRVListApp(params)
+          .then(function (result) {
+            var oViewModel = new JSONModel(result.data.d);
+            var list = oViewModel.getProperty("/");
+            that.oModel = new JSONModel(list); //.results);
+            that.getView().setModel(that.oModel);
+            for (var i = 0; i < 30; i++) {
+              var prop = "/results/" + i + "/Appid";
+              if (that.oModel.getProperty(prop) === "POD") {
+                that.getNumbDel(i);
+              }
+            }
+            sap.ui.core.BusyIndicator.hide();
+          })
+          .catch(function (result) {
+            // Add error callback code here.
+            MessageToast.show(
+              result.data.error.innererror.errordetails[1].message,
+              {
+                duration: 4000, // default
+                width: "20em", // default
+                my: "center bottom", // default
+                at: "center bottom", // default
+                of: window, // default
+                offset: "0 -30", // default
+                collision: "fit fit", // default
+                onClose: null, // default
+                autoClose: true, // default
+                animationTimingFunction: "ease", // default
+                animationDuration: 1000, // default
+                closeOnBrowserNavigation: true // default
+              }
+            );
+            console.log(
+              "Code: ",
+              result.data.error.innererror.errordetails[1].code
+            );
+            console.log(
+              "Message: ",
+              result.data.error.innererror.errordetails[1].message
+            );
+          });
       },
 
       getNumbDel: function (contatore) {
@@ -176,6 +236,7 @@ sap.ui.define(
         var path = "?$filter=Usrid%20eq%20%27" + usr.toUpperCase() + "%27";
         var params = {
           Authorization: "Basic c3NpaTpsaW1waW8=",
+          // DEV Authorization: "Basic c3NpaTpaZXVzQDIwMjEh",
           //Origin: 'https://2eux8z72w3.execute-api.eu-west-3.amazonaws.com',
           path: path //'(Pwdob=\'POD\',Uname=\'SSII\',Pwd=\'DQ3PCyo37B\')',
         };
@@ -191,8 +252,8 @@ sap.ui.define(
                 cont++;
               }
             }
-            var prop = "/TileCollection/" + contatore + "/number";
-            oModel.setProperty(prop, cont + "");
+            var prop = "/results/" + contatore + "/number";
+            that.oModel.setProperty(prop, cont + "");
 
             sap.ui.core.BusyIndicator.hide();
           })

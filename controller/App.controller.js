@@ -74,6 +74,7 @@ sap.ui.define(
 
         var params = {
           Authorization: "Basic c3NpaTpsaW1waW8=",
+          // DEV Authorization: "Basic c3NpaTpaZXVzQDIwMjEh",
           "X-Requested-With": "X"
           //"path": path //'(Pwdob=\'POD\',Uname=\'SSII\',Pwd=\'DQ3PCyo37B\')',
         };
@@ -172,6 +173,7 @@ sap.ui.define(
         var psw = this.getView().byId("passwordInput").getValue();
         var path = "(Pwdob='POD',Uname='" + usr + "',Pwd='" + psw + "')";
         var params = {
+          // DEV Authorization: "Basic c3NpaTpaZXVzQDIwMjEh",
           Authorization: "Basic c3NpaTpsaW1waW8=",
           //Origin: 'https://2eux8z72w3.execute-api.eu-west-3.amazonaws.com',
           path: path //'(Pwdob=\'POD\',Uname=\'SSII\',Pwd=\'DQ3PCyo37B\')',
@@ -267,6 +269,7 @@ sap.ui.define(
         var path = "(Pwdob='POD',Uname='" + usr + "',Email='" + email + "')";
         var params = {
           Authorization: "Basic c3NpaTpsaW1waW8=",
+          // DEV Authorization: "Basic c3NpaTpaZXVzQDIwMjEh",
           //Origin: 'https://2eux8z72w3.execute-api.eu-west-3.amazonaws.com',
           path: path //'(Pwdob=\'POD\',Uname=\'SSII\',Pwd=\'DQ3PCyo37B\')',
         };

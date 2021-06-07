@@ -55,7 +55,7 @@ apigClientFactory.newClient = function (config) {
 
   var invokeUrl =
     "https://cors-casillo-sap.herokuapp.com/https://f390w4tlt0.execute-api.eu-west-3.amazonaws.com/StageDeploy";
-  //var invokeUrl = 'http://www.whateverorigin.org/get?url='+encodeURIComponent('https://2eux8z72w3.execute-api.eu-west-3.amazonaws.com/StageDeploy');
+  /*DEV "https://cors-casillo-sap.herokuapp.com/https://8zm0gba28l.execute-api.eu-west-3.amazonaws.com/StageDeploy"; */
   var endpoint = /(^https?:\/\/[^\/]+)/g.exec(invokeUrl)[1];
   var pathComponent = invokeUrl.substring(endpoint.length);
 
@@ -90,6 +90,40 @@ apigClientFactory.newClient = function (config) {
     simpleHttpClientConfig,
     sigV4ClientConfig
   );
+
+  apigClient.ZWEBPODSRVListApp = function (params, body, additionalParams) {
+    if (additionalParams === undefined) {
+      additionalParams = {};
+    }
+
+    apiGateway.core.utils.assertParametersDefined(
+      params,
+      ["Authorization", "path"],
+      ["body"]
+    );
+
+    var ZWEBPODSRVListAppRequest = {
+      verb: "get".toUpperCase(),
+      path:
+        pathComponent +
+        uritemplate("/ZWEB_USERS_SRV/UserAppSet").expand(
+          apiGateway.core.utils.parseParametersToObject(params, [])
+        ) +
+        params["path"],
+      headers: apiGateway.core.utils.parseParametersToObject(params, [
+        "Authorization"
+      ]),
+      queryParams: apiGateway.core.utils.parseParametersToObject(params, []),
+      body: body
+    };
+
+    return apiGatewayClient.makeRequest(
+      ZWEBPODSRVListAppRequest,
+      authType,
+      additionalParams,
+      config.apiKey
+    );
+  };
 
   apigClient.zSCPWFFATTUREGRANOSRVGetDataFatturaSetGet = function (
     params,

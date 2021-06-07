@@ -13,7 +13,7 @@
 			<VBox alignItems="Center">
 			<Image src="./img/Casillo_logo.png" width="260px" class="absolute"/>
 			</VBox>
-			<TileContainer id="container" tileDelete="handleTileDelete" tiles="{/TileCollection}">
+			<TileContainer id="container" tileDelete="handleTileDelete" tiles="{/results}">
 				<StandardTile press="onPressTile" icon="{icon}" type="{type}" number="{number}" numberUnit="{numberUnit}" title="{title}" info="{info}" infoState="{infoState}" />
 			</TileContainer>
 			<!--	<footer>
